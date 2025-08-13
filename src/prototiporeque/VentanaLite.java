@@ -1,0 +1,85 @@
+
+package prototiporeque;
+import javax.swing.*;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+/**
+ *
+ * @author abril
+ */
+
+
+public class VentanaLite extends JFrame {
+
+    public VentanaLite() {
+        
+        setTitle("Sistema de autorización");
+        setSize(400, 350);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(null);
+
+       
+        JLabel logo = new JLabel("Sistema (deberia de ir el logo) ");
+        logo.setFont(new Font("Segoe UI", Font.PLAIN, 18));
+        logo.setBounds(20, 20, 200, 30);
+        add(logo);
+
+        
+        JLabel lblSignIn = new JLabel("Sign in");
+        lblSignIn.setFont(new Font("Segoe UI", Font.BOLD, 24));
+        lblSignIn.setBounds(20, 60, 200, 30);
+        add(lblSignIn);
+
+  
+        JTextField txtEmail = new JTextField();
+        txtEmail.setBounds(20, 110, 340, 35);
+        txtEmail.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        add(txtEmail);
+
+        
+        // Enlace: No account?
+        JLabel lblCreate = new JLabel("<html>No account? <font color='blue'>Create one!</font></html>");
+        lblCreate.setFont(new Font("Segoe UI", Font.PLAIN, 12));
+        lblCreate.setBounds(20, 150, 250, 20);
+        lblCreate.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        lblCreate.addMouseListener(new MouseAdapter() {
+             public void mouseClicked(MouseEvent e) {
+                new VentanaCuenta().setVisible(true); 
+                dispose(); 
+            }
+        });
+        add(lblCreate);
+
+        // Enlace: Can't access your account?
+        JLabel lblAccess = new JLabel("<html><font color='blue'>Can't access your account?</font></html>");
+        lblAccess.setFont(new Font("Segoe UI", Font.PLAIN, 12));
+        lblAccess.setBounds(20, 175, 250, 20);
+        lblAccess.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        add(lblAccess);
+
+  
+        JLabel lblOptions = new JLabel("<html><font color='blue'>Sign-in options</font></html>");
+        lblOptions.setFont(new Font("Segoe UI", Font.PLAIN, 12));
+        lblOptions.setBounds(20, 200, 250, 20);
+        lblOptions.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        add(lblOptions);
+
+      
+        JButton btnNext = new JButton("Next");
+        btnNext.setBackground(new Color(0, 120, 215));
+        btnNext.setForeground(Color.WHITE);
+        btnNext.setFont(new Font("Segoe UI", Font.BOLD, 14));
+        btnNext.setBounds(260, 240, 100, 35);
+        btnNext.setFocusPainted(false);
+        btnNext.addActionListener(e -> {
+            String email = txtEmail.getText();
+            //JOptionPane.showMessageDialog(this, "Email ingresado: " + email);
+        });
+        add(btnNext);
+    }
+
+}

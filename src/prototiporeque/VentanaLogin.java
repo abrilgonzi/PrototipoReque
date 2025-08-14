@@ -38,13 +38,20 @@ public class VentanaLogin extends JFrame {
         JTextField txtEmail = new JTextField();
         txtEmail.setBounds(20, 110, 340, 35);
         txtEmail.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        txtEmail.setBorder(BorderFactory.createTitledBorder("Email"));
         add(txtEmail);
+        
+        JTextField txtPass = new JTextField();
+        txtPass.setBounds(20, 150, 340, 35);
+        txtPass.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        txtPass.setBorder(BorderFactory.createTitledBorder("Password"));
+        add(txtPass);
 
         
         // Enlace: No account?
         JLabel lblCreate = new JLabel("<html>No account? <font color='blue'>Create one!</font></html>");
         lblCreate.setFont(new Font("Segoe UI", Font.PLAIN, 12));
-        lblCreate.setBounds(20, 150, 250, 20);
+        lblCreate.setBounds(20, 185, 250, 20);
         lblCreate.setCursor(new Cursor(Cursor.HAND_CURSOR));
         lblCreate.addMouseListener(new MouseAdapter() {
              public void mouseClicked(MouseEvent e) {
@@ -57,8 +64,14 @@ public class VentanaLogin extends JFrame {
         // Enlace: Can't access your account?
         JLabel lblAccess = new JLabel("<html><font color='blue'>Forgot your password?</font></html>");
         lblAccess.setFont(new Font("Segoe UI", Font.PLAIN, 12));
-        lblAccess.setBounds(20, 175, 250, 20);
+        lblAccess.setBounds(20, 205, 250, 20);
         lblAccess.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        lblAccess.addMouseListener(new MouseAdapter() {
+             public void mouseClicked(MouseEvent e) {
+                new VentanaRecupCont().setVisible(true); 
+                dispose(); 
+            }
+        });
         add(lblAccess);
 
       

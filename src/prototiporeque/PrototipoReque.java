@@ -15,7 +15,9 @@ public class PrototipoReque {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        VentanaLite ventanita = new VentanaLite();
+        //VentanaCrear ventanita = new VentanaCrear();
+        VentanaLogin ventanita = new VentanaLogin();
+        //VentanaCuenta ventanita = new VentanaCuenta();
         ventanita.setVisible(true);
         
         

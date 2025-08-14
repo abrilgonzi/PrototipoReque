@@ -12,9 +12,9 @@ import java.awt.event.MouseEvent;
  */
 
 
-public class VentanaLite extends JFrame {
+public class VentanaLogin extends JFrame {
 
-    public VentanaLite() {
+    public VentanaLogin() {
         
         setTitle("Sistema de autorización");
         setSize(400, 350);
@@ -48,7 +48,7 @@ public class VentanaLite extends JFrame {
         lblCreate.setCursor(new Cursor(Cursor.HAND_CURSOR));
         lblCreate.addMouseListener(new MouseAdapter() {
              public void mouseClicked(MouseEvent e) {
-                new VentanaCuenta().setVisible(true); 
+                new VentanaCrear().setVisible(true); 
                 dispose(); 
             }
         });

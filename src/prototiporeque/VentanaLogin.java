@@ -55,18 +55,11 @@ public class VentanaLogin extends JFrame {
         add(lblCreate);
 
         // Enlace: Can't access your account?
-        JLabel lblAccess = new JLabel("<html><font color='blue'>Can't access your account?</font></html>");
+        JLabel lblAccess = new JLabel("<html><font color='blue'>Forgot your password?</font></html>");
         lblAccess.setFont(new Font("Segoe UI", Font.PLAIN, 12));
         lblAccess.setBounds(20, 175, 250, 20);
         lblAccess.setCursor(new Cursor(Cursor.HAND_CURSOR));
         add(lblAccess);
-
-  
-        JLabel lblOptions = new JLabel("<html><font color='blue'>Sign-in options</font></html>");
-        lblOptions.setFont(new Font("Segoe UI", Font.PLAIN, 12));
-        lblOptions.setBounds(20, 200, 250, 20);
-        lblOptions.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        add(lblOptions);
 
       
         JButton btnNext = new JButton("Next");

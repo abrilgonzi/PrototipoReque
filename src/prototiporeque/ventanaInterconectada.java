@@ -1,0 +1,63 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package prototiporeque;
+import javax.swing.*;
+import java.awt.*;
+
+/**
+ *
+ * @author abril
+ */
+
+public class ventanaInterconectada  extends JFrame {
+
+    public ventanaInterconectada() {
+        setTitle("Choose");
+        setSize(400, 250);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        getContentPane().setBackground(Color.WHITE);
+        setLayout(null);
+
+     
+        JLabel lblTitulo = new JLabel("Choose the option");
+        lblTitulo.setFont(new Font("Segoe UI", Font.BOLD, 20));
+        lblTitulo.setForeground(new Color(0, 120, 215));
+        lblTitulo.setBounds(60, 60, 200, 30);
+        add(lblTitulo);
+
+
+        JButton btnOpcion1 = new JButton("Add a new user");
+        btnOpcion1.setBounds(50, 100, 120, 40);
+        btnOpcion1.setBackground(new Color(0, 120, 215)); 
+        btnOpcion1.setForeground(Color.WHITE);
+        btnOpcion1.setFont(new Font("Segoe UI", Font.BOLD, 14));
+        btnOpcion1.setFocusPainted(false);
+        btnOpcion1.setBorder(BorderFactory.createEmptyBorder());
+        btnOpcion1.addActionListener(e -> {
+            Admi admi = new Admi();
+            admi.setVisible(true);
+            dispose();
+        });
+        add(btnOpcion1);
+
+
+        JButton btnOpcion2 = new JButton("Manage account");
+        btnOpcion2.setBounds(220, 100, 120, 40);
+        btnOpcion2.setBackground(new Color(0, 120, 215)); 
+        btnOpcion2.setForeground(Color.WHITE);
+        btnOpcion2.setFont(new Font("Segoe UI", Font.BOLD, 14));
+        btnOpcion2.setFocusPainted(false);
+        btnOpcion2.setBorder(BorderFactory.createEmptyBorder());
+        btnOpcion2.addActionListener(e -> {
+            AdministrarCuentas admi = new AdministrarCuentas();
+            admi.setVisible(true);
+            dispose();
+        });
+        add(btnOpcion2);
+    }
+
+
+}

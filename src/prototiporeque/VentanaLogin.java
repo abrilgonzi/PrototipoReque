@@ -68,7 +68,7 @@ public class VentanaLogin extends JFrame {
         lblAccess.setCursor(new Cursor(Cursor.HAND_CURSOR));
         lblAccess.addMouseListener(new MouseAdapter() {
              public void mouseClicked(MouseEvent e) {
-                new VentanaRecupCont().setVisible(true); 
+                new VentanaEmailResetPass().setVisible(true); 
                 dispose(); 
             }
         });

@@ -23,7 +23,7 @@ public class VentanaLogin extends JFrame {
         setLayout(null);
 
        
-        JLabel logo = new JLabel("Sistema (deberia de ir el logo) ");
+        JLabel logo = new JLabel("(logo) TEC");
         logo.setFont(new Font("Segoe UI", Font.PLAIN, 18));
         logo.setBounds(20, 20, 200, 30);
         add(logo);

@@ -22,6 +22,15 @@ public class VentanaCrear extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         jTextField1.setBorder(BorderFactory.createTitledBorder("Email"));
+        jButton1.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        
+        jLabel4.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        jLabel4.addMouseListener(new MouseAdapter() {
+             public void mouseClicked(MouseEvent e) {
+                new VentanaLogin().setVisible(true); 
+                dispose(); 
+            }
+        });
         
     }
 

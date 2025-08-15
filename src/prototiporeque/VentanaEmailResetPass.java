@@ -66,7 +66,6 @@ public class VentanaEmailResetPass extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(153, 153, 153));
         jLabel3.setText("Enter your Email address to reset your password");
 
-        jTextField1.setText("Email");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);

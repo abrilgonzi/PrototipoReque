@@ -86,20 +86,6 @@ public class Admi extends JFrame {
         });
         add(btnGuardar);
 
-        // Botón Cerrar Sesión
-        JButton btnCerrarSesion = new JButton("Sign out");
-        btnCerrarSesion.setBounds(20, 200, 150, 35);
-        btnCerrarSesion.setBackground(new Color(220, 53, 69));
-        btnCerrarSesion.setForeground(Color.WHITE);
-        btnCerrarSesion.setFont(new Font("Segoe UI", Font.BOLD, 14));
-        btnCerrarSesion.setFocusPainted(false);
-        btnCerrarSesion.setBorder(BorderFactory.createEmptyBorder());
-        btnCerrarSesion.addActionListener(e -> {
-            new VentanaLogin().setVisible(true);
-            dispose(); 
-        });
-        add(btnCerrarSesion);
-
 
         setUndecorated(false);
     }

@@ -85,12 +85,17 @@ public class VentanaLogin extends JFrame {
             String email = txtEmail.getText();
             if (email.equalsIgnoreCase("admin@gmail.com"))
             {
-             ventanaInterconectada admi = new ventanaInterconectada();
+             ventanaInterconectada ventana = new ventanaInterconectada();
+             ventana.setVisible(true);
              //VentanaAdministrador admi = new VentanaAdministrador(); 
-             admi.setVisible(true);
-             dispose();
-             
+
             }
+            else {
+                VentanaSistema ventana = new VentanaSistema();
+                ventana.setVisible(true);
+            }
+            
+            dispose();
             //JOptionPane.showMessageDialog(this, "Email ingresado: " + email);
         });
         add(btnNext);

@@ -35,7 +35,7 @@ public class V_ManageAccounts extends JFrame {
         lblFiltro.setBounds(20, 50, 120, 25);
         add(lblFiltro);
         
-        JLabel lblVolver = new JLabel("Volver");
+        JLabel lblVolver = new JLabel("Return");
         lblVolver.setFont(new Font("Segoe UI", Font.ITALIC, 14));
         lblVolver.setForeground(new Color(0, 120, 215));
         lblVolver.setBounds(450, 315, 90, 30);

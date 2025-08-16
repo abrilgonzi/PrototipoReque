@@ -5,6 +5,8 @@
 package prototiporeque;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 /**
  *
@@ -61,7 +63,7 @@ public class V_AddUser extends JFrame {
 
   
         JButton btnGuardar = new JButton("Done");
-        btnGuardar.setBounds(250, 200, 100, 35);
+        btnGuardar.setBounds(70, 200, 100, 35);
         btnGuardar.setBackground(new Color(0, 120, 215));
         btnGuardar.setForeground(Color.WHITE);
         btnGuardar.setFont(new Font("Segoe UI", Font.BOLD, 14));
@@ -85,6 +87,19 @@ public class V_AddUser extends JFrame {
             comboStatus.setSelectedIndex(0);
         });
         add(btnGuardar);
+        
+        JLabel lblVolver = new JLabel("Return");
+        lblVolver.setFont(new Font("Segoe UI", Font.ITALIC, 14));
+        lblVolver.setForeground(new Color(0, 120, 215));
+        lblVolver.setBounds(250, 205, 50, 30);
+        lblVolver.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        lblVolver.addMouseListener(new MouseAdapter() {
+             public void mouseClicked(MouseEvent e) {
+                new V_Admin().setVisible(true);
+                dispose();
+            }
+        });
+        add(lblVolver);
 
 
         setUndecorated(false);

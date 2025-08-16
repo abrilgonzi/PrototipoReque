@@ -83,7 +83,7 @@ public class V_Login extends JFrame {
         btnNext.setFocusPainted(false);
         btnNext.addActionListener(e -> {
             String email = txtEmail.getText();
-            if (email.equalsIgnoreCase("admin@gmail.com"))
+            if (email.equalsIgnoreCase("admin"))
             {
              V_Admin ventana = new V_Admin();
              ventana.setVisible(true);

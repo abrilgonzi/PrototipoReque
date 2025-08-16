@@ -36,13 +36,13 @@ public class VentanaLogin extends JFrame {
 
   
         JTextField txtEmail = new JTextField();
-        txtEmail.setBounds(20, 110, 340, 35);
+        txtEmail.setBounds(20, 110, 340, 40);
         txtEmail.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         txtEmail.setBorder(BorderFactory.createTitledBorder("Email"));
         add(txtEmail);
         
         JTextField txtPass = new JTextField();
-        txtPass.setBounds(20, 150, 340, 35);
+        txtPass.setBounds(20, 155, 340, 40);
         txtPass.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         txtPass.setBorder(BorderFactory.createTitledBorder("Password"));
         add(txtPass);
@@ -51,7 +51,7 @@ public class VentanaLogin extends JFrame {
         // Enlace: No account?
         JLabel lblCreate = new JLabel("<html>No account? <font color='blue'>Create one!</font></html>");
         lblCreate.setFont(new Font("Segoe UI", Font.PLAIN, 12));
-        lblCreate.setBounds(20, 185, 250, 20);
+        lblCreate.setBounds(20, 195, 250, 20);
         lblCreate.setCursor(new Cursor(Cursor.HAND_CURSOR));
         lblCreate.addMouseListener(new MouseAdapter() {
              public void mouseClicked(MouseEvent e) {
@@ -64,12 +64,12 @@ public class VentanaLogin extends JFrame {
         // Enlace: Can't access your account?
         JLabel lblAccess = new JLabel("<html><font color='blue'>Forgot your password?</font></html>");
         lblAccess.setFont(new Font("Segoe UI", Font.PLAIN, 12));
-        lblAccess.setBounds(20, 205, 250, 20);
+        lblAccess.setBounds(20, 215, 250, 20);
         lblAccess.setCursor(new Cursor(Cursor.HAND_CURSOR));
         lblAccess.addMouseListener(new MouseAdapter() {
              public void mouseClicked(MouseEvent e) {
                 new VentanaEmailResetPass().setVisible(true); 
-                dispose(); 
+                dispose();
             }
         });
         add(lblAccess);
@@ -79,7 +79,7 @@ public class VentanaLogin extends JFrame {
         btnNext.setBackground(new Color(0, 120, 215));
         btnNext.setForeground(Color.WHITE);
         btnNext.setFont(new Font("Segoe UI", Font.BOLD, 14));
-        btnNext.setBounds(260, 240, 100, 35);
+        btnNext.setBounds(260, 250, 100, 35);
         btnNext.setFocusPainted(false);
         btnNext.addActionListener(e -> {
             String email = txtEmail.getText();

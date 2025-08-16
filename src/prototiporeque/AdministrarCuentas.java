@@ -4,6 +4,8 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class AdministrarCuentas extends JFrame {
 
@@ -32,6 +34,19 @@ public class AdministrarCuentas extends JFrame {
         lblFiltro.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         lblFiltro.setBounds(20, 50, 120, 25);
         add(lblFiltro);
+        
+        JLabel lblVolver = new JLabel("Volver");
+        lblVolver.setFont(new Font("Segoe UI", Font.ITALIC, 14));
+        lblVolver.setForeground(new Color(0, 120, 215));
+        lblVolver.setBounds(450, 315, 90, 30);
+        lblVolver.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        lblVolver.addMouseListener(new MouseAdapter() {
+             public void mouseClicked(MouseEvent e) {
+                new ventanaInterconectada().setVisible(true); 
+                dispose(); 
+            }
+        });
+        add(lblVolver);
 
         String[] estados = {"Todos", "Activo", "Suspendido", "Pendiente"};
         comboFiltro = new JComboBox<>(estados);
@@ -73,7 +88,6 @@ public class AdministrarCuentas extends JFrame {
         btnEliminar.setBorder(BorderFactory.createEmptyBorder());
         btnEliminar.addActionListener(e -> eliminarUsuario());
         add(btnEliminar);
-
         
         model.addRow(new Object[]{"user1@example.com", "Activo"});
         model.addRow(new Object[]{"user2@example.com", "Pendiente"});

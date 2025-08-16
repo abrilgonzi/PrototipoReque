@@ -25,12 +25,12 @@ public class ventanaInterconectada  extends JFrame {
         JLabel lblTitulo = new JLabel("Choose the option");
         lblTitulo.setFont(new Font("Segoe UI", Font.BOLD, 20));
         lblTitulo.setForeground(new Color(0, 120, 215));
-        lblTitulo.setBounds(60, 60, 200, 30);
+        lblTitulo.setBounds(30, 15, 200, 30);
         add(lblTitulo);
 
 
         JButton btnOpcion1 = new JButton("Add a new user");
-        btnOpcion1.setBounds(50, 100, 120, 40);
+        btnOpcion1.setBounds(50, 70, 120, 40);
         btnOpcion1.setBackground(new Color(0, 120, 215)); 
         btnOpcion1.setForeground(Color.WHITE);
         btnOpcion1.setFont(new Font("Segoe UI", Font.BOLD, 14));
@@ -45,7 +45,7 @@ public class ventanaInterconectada  extends JFrame {
 
 
         JButton btnOpcion2 = new JButton("Manage account");
-        btnOpcion2.setBounds(220, 100, 120, 40);
+        btnOpcion2.setBounds(220, 70, 120, 40);
         btnOpcion2.setBackground(new Color(0, 120, 215)); 
         btnOpcion2.setForeground(Color.WHITE);
         btnOpcion2.setFont(new Font("Segoe UI", Font.BOLD, 14));
@@ -60,7 +60,7 @@ public class ventanaInterconectada  extends JFrame {
         
         // Botón Cerrar Sesión
         JButton btnCerrarSesion = new JButton("Sign out");
-        btnCerrarSesion.setBounds(20, 160, 150, 35);
+        btnCerrarSesion.setBounds(50, 160, 120, 35);
         btnCerrarSesion.setBackground(new Color(220, 53, 69));
         btnCerrarSesion.setForeground(Color.WHITE);
         btnCerrarSesion.setFont(new Font("Segoe UI", Font.BOLD, 14));

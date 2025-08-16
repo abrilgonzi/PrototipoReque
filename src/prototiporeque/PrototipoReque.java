@@ -16,9 +16,9 @@ public class PrototipoReque {
     public static void main(String[] args) {
         // TODO code application logic here
         //VentanaCrear ventanita = new VentanaCrear();
-        V_AddUser ventanita = new V_AddUser();
+        //V_AddUser ventanita = new V_AddUser();
         //V_ManageAccounts ventanita = new V_ManageAccounts();
-        //VentanaCuenta ventanita = new VentanaCuenta();
+        V_Login ventanita = new V_Login();
         ventanita.setVisible(true);
         
         

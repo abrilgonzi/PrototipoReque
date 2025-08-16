@@ -12,19 +12,19 @@ import java.awt.event.MouseEvent;
  *
  * @author xande
  */
-public class VentanaSistema extends javax.swing.JFrame {
+public class V_LandingPlace extends javax.swing.JFrame {
 
     /**
      * Creates new form VentanaCrear
      */
-    public VentanaSistema() {
+    public V_LandingPlace() {
         
         initComponents();
         setLocationRelativeTo(null);
         jButton1.setCursor(new Cursor(Cursor.HAND_CURSOR));
         jButton1.addMouseListener(new MouseAdapter() {
              public void mouseClicked(MouseEvent e) {
-                new VentanaLogin().setVisible(true); 
+                new V_Login().setVisible(true); 
                 dispose(); 
             }
         });

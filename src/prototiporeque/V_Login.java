@@ -12,9 +12,9 @@ import java.awt.event.MouseEvent;
  */
 
 
-public class VentanaLogin extends JFrame {
+public class V_Login extends JFrame {
 
-    public VentanaLogin() {
+    public V_Login() {
         
         setTitle("Sistema de autorización");
         setSize(400, 350);
@@ -55,7 +55,7 @@ public class VentanaLogin extends JFrame {
         lblCreate.setCursor(new Cursor(Cursor.HAND_CURSOR));
         lblCreate.addMouseListener(new MouseAdapter() {
              public void mouseClicked(MouseEvent e) {
-                new VentanaCrear().setVisible(true); 
+                new V_AskEmailCreateAccount().setVisible(true); 
                 dispose(); 
             }
         });
@@ -68,7 +68,7 @@ public class VentanaLogin extends JFrame {
         lblAccess.setCursor(new Cursor(Cursor.HAND_CURSOR));
         lblAccess.addMouseListener(new MouseAdapter() {
              public void mouseClicked(MouseEvent e) {
-                new VentanaEmailResetPass().setVisible(true); 
+                new V_AskEmailResetPassword().setVisible(true); 
                 dispose();
             }
         });
@@ -85,13 +85,13 @@ public class VentanaLogin extends JFrame {
             String email = txtEmail.getText();
             if (email.equalsIgnoreCase("admin@gmail.com"))
             {
-             ventanaInterconectada ventana = new ventanaInterconectada();
+             V_Admin ventana = new V_Admin();
              ventana.setVisible(true);
              //VentanaAdministrador admi = new VentanaAdministrador(); 
 
             }
             else {
-                VentanaSistema ventana = new VentanaSistema();
+                V_LandingPlace ventana = new V_LandingPlace();
                 ventana.setVisible(true);
             }
             

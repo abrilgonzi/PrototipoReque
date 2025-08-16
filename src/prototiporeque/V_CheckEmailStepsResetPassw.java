@@ -12,19 +12,19 @@ import java.awt.event.MouseEvent;
  *
  * @author xande
  */
-public class VentanaRecupCont extends javax.swing.JFrame {
+public class V_CheckEmailStepsResetPassw extends javax.swing.JFrame {
 
     /**
      * Creates new form VentanaCrear
      */
-    public VentanaRecupCont() {
+    public V_CheckEmailStepsResetPassw() {
         
         initComponents();
         setLocationRelativeTo(null);
         jButton1.setCursor(new Cursor(Cursor.HAND_CURSOR));
         jButton1.addMouseListener(new MouseAdapter() {
              public void mouseClicked(MouseEvent e) {
-                new VentanaLogin().setVisible(true); 
+                new V_Login().setVisible(true); 
                 dispose(); 
             }
         });
@@ -77,15 +77,14 @@ public class VentanaRecupCont extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(56, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(61, 61, 61)
-                        .addComponent(jLabel2))
                     .addComponent(jLabel3)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(61, 61, 61)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel4)))))
                 .addGap(41, 41, 41))
             .addGroup(layout.createSequentialGroup()
                 .addGap(182, 182, 182)

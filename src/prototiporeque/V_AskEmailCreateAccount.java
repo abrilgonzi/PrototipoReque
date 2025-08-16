@@ -12,12 +12,12 @@ import java.awt.event.MouseEvent;
  *
  * @author xande
  */
-public class VentanaCrear extends javax.swing.JFrame {
+public class V_AskEmailCreateAccount extends javax.swing.JFrame {
 
     /**
      * Creates new form VentanaCrear
      */
-    public VentanaCrear() {
+    public V_AskEmailCreateAccount() {
         
         initComponents();
         setLocationRelativeTo(null);
@@ -25,7 +25,7 @@ public class VentanaCrear extends javax.swing.JFrame {
         jButton1.setCursor(new Cursor(Cursor.HAND_CURSOR));
         jButton1.addMouseListener(new MouseAdapter() {
              public void mouseClicked(MouseEvent e) {
-                new VentanaCreacion().setVisible(true); 
+                new V_CheckEmailCreateAccount().setVisible(true); 
                 dispose(); 
             }
         });
@@ -33,7 +33,7 @@ public class VentanaCrear extends javax.swing.JFrame {
         jLabel4.setCursor(new Cursor(Cursor.HAND_CURSOR));
         jLabel4.addMouseListener(new MouseAdapter() {
              public void mouseClicked(MouseEvent e) {
-                new VentanaLogin().setVisible(true); 
+                new V_Login().setVisible(true); 
                 dispose(); 
             }
         });

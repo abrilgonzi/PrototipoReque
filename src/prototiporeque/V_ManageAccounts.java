@@ -7,14 +7,14 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class AdministrarCuentas extends JFrame {
+public class V_ManageAccounts extends JFrame {
 
     private JTable table;
     private DefaultTableModel model;
     private JComboBox<String> comboFiltro;
     private TableRowSorter<DefaultTableModel> sorter;
 
-    public AdministrarCuentas() {
+    public V_ManageAccounts() {
         setTitle("Administración de Cuentas");
         setSize(600, 400);
         setLocationRelativeTo(null);
@@ -42,7 +42,7 @@ public class AdministrarCuentas extends JFrame {
         lblVolver.setCursor(new Cursor(Cursor.HAND_CURSOR));
         lblVolver.addMouseListener(new MouseAdapter() {
              public void mouseClicked(MouseEvent e) {
-                new ventanaInterconectada().setVisible(true); 
+                new V_Admin().setVisible(true); 
                 dispose(); 
             }
         });

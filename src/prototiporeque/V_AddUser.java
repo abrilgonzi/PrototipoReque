@@ -14,9 +14,9 @@ import java.awt.*;
 
 
 
-public class Admi extends JFrame {
+public class V_AddUser extends JFrame {
 
-    public Admi() {
+    public V_AddUser() {
 
         setTitle("Administrador - Agregar Usuario");
         setSize(400, 300);

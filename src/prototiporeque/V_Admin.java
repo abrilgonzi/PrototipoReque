@@ -11,9 +11,9 @@ import java.awt.*;
  * @author abril
  */
 
-public class ventanaInterconectada  extends JFrame {
+public class V_Admin  extends JFrame {
 
-    public ventanaInterconectada() {
+    public V_Admin() {
         setTitle("Choose");
         setSize(400, 250);
         setLocationRelativeTo(null);
@@ -37,7 +37,7 @@ public class ventanaInterconectada  extends JFrame {
         btnOpcion1.setFocusPainted(false);
         btnOpcion1.setBorder(BorderFactory.createEmptyBorder());
         btnOpcion1.addActionListener(e -> {
-            Admi admi = new Admi();
+            V_AddUser admi = new V_AddUser();
             admi.setVisible(true);
             dispose();
         });
@@ -52,7 +52,7 @@ public class ventanaInterconectada  extends JFrame {
         btnOpcion2.setFocusPainted(false);
         btnOpcion2.setBorder(BorderFactory.createEmptyBorder());
         btnOpcion2.addActionListener(e -> {
-            AdministrarCuentas admi = new AdministrarCuentas();
+            V_ManageAccounts admi = new V_ManageAccounts();
             admi.setVisible(true);
             dispose();
         });
@@ -67,7 +67,7 @@ public class ventanaInterconectada  extends JFrame {
         btnCerrarSesion.setFocusPainted(false);
         btnCerrarSesion.setBorder(BorderFactory.createEmptyBorder());
         btnCerrarSesion.addActionListener(e -> {
-            new VentanaLogin().setVisible(true);
+            new V_Login().setVisible(true);
             dispose(); 
         });
         add(btnCerrarSesion);

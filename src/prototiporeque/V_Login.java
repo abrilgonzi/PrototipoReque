@@ -91,13 +91,13 @@ public class V_Login extends JFrame {
              //VentanaAdministrador admi = new VentanaAdministrador(); 
 
             }
-             if (email.equalsIgnoreCase(("BDError")))
+            else if (email.equalsIgnoreCase(("BDError")))
             {
                 V_Error error = new V_Error();
                 error.setVisible(true);
                 
             }
-            if (email.equalsIgnoreCase("CuentaSuspendida"))
+            else if (email.equalsIgnoreCase("CuentaSuspendida"))
             {
               V_SAccount nueva = new V_SAccount();
               nueva.setVisible(true);

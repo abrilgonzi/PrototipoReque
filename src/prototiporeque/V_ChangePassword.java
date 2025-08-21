@@ -58,13 +58,13 @@ public class V_ChangePassword extends JFrame {
         add(txtConfirmPass);
 
    
-        JLabel lblBack = new JLabel("<html><font color='blue'>Back to Sign in</font></html>");
+        JLabel lblBack = new JLabel("<html><font color='blue'>Return</font></html>");
         lblBack.setFont(new Font("Segoe UI", Font.PLAIN, 12));
         lblBack.setBounds(20, 260, 200, 20);
         lblBack.setCursor(new Cursor(Cursor.HAND_CURSOR));
         lblBack.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent e) {
-                new V_Login().setVisible(true);
+                new V_LandingPlace().setVisible(true);
                 dispose();
             }
         });
@@ -83,7 +83,19 @@ public class V_ChangePassword extends JFrame {
             String nueva = new String(txtNewPass.getPassword());
             String confirmar = new String(txtConfirmPass.getPassword());
 
-            /* esto es por si queremos hacer validaciones despuesif (actual.isEmpty() || nueva.isEmpty() || confirmar.isEmpty()) {
+            
+            
+            
+            
+            if (actual.equalsIgnoreCase("ErrorBD"))
+            {
+                V_Error ventana = new V_Error();
+                ventana.setVisible(true);
+                dispose();
+            }
+             else 
+            {
+                if (actual.isEmpty() || nueva.isEmpty() || confirmar.isEmpty()) {
                 JOptionPane.showMessageDialog(this,
                         "All fields are required.",
                         "Error",
@@ -97,22 +109,17 @@ public class V_ChangePassword extends JFrame {
                 JOptionPane.showMessageDialog(this,
                         "New password cannot be the same as current password.",
                         "Error",
-                        JOptionPane.ERROR_MESSAGE);*/
-            if (actual.equalsIgnoreCase("ErrorBD"))
-            {
-                V_Error ventana = new V_Error();
-                ventana.setVisible(true);
-                dispose();
+                        JOptionPane.ERROR_MESSAGE);
             }
-             else 
-            {
                 
-                JOptionPane.showMessageDialog(this,
+            else 
+            {JOptionPane.showMessageDialog(this,
                         "Password updated successfully!",
                         "Success",
                         JOptionPane.INFORMATION_MESSAGE);
-                new V_Login().setVisible(true);
+                new V_LandingPlace().setVisible(true);
                 dispose();
+            }
             }
            
         

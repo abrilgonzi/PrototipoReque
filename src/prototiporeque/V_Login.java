@@ -85,7 +85,7 @@ public class V_Login extends JFrame {
             String email = txtEmail.getText();
             if (email.equalsIgnoreCase("admin"))
             {
-             V_Admin ventana = new V_Admin();
+             V_AdminPanel ventana = new V_AdminPanel();
              ventana.setVisible(true);
              //VentanaAdministrador admi = new VentanaAdministrador(); 
 

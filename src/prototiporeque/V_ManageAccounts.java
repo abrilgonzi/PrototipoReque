@@ -42,7 +42,7 @@ public class V_ManageAccounts extends JFrame {
         lblVolver.setCursor(new Cursor(Cursor.HAND_CURSOR));
         lblVolver.addMouseListener(new MouseAdapter() {
              public void mouseClicked(MouseEvent e) {
-                new V_Admin().setVisible(true); 
+                new V_AdminPanel().setVisible(true); 
                 dispose(); 
             }
         });

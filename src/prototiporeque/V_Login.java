@@ -83,6 +83,7 @@ public class V_Login extends JFrame {
         btnNext.setFocusPainted(false);
         btnNext.addActionListener(e -> {
             String email = txtEmail.getText();
+            
             if (email.equalsIgnoreCase("admin"))
             {
              V_AdminPanel ventana = new V_AdminPanel();
@@ -90,11 +91,24 @@ public class V_Login extends JFrame {
              //VentanaAdministrador admi = new VentanaAdministrador(); 
 
             }
+             if (email.equalsIgnoreCase(("BDError")))
+            {
+                V_Error error = new V_Error();
+                error.setVisible(true);
+                
+            }
+            if (email.equalsIgnoreCase("CuentaSuspendida"))
+            {
+              V_SAccount nueva = new V_SAccount();
+              nueva.setVisible(true);
+            }
+            
             else {
                 V_LandingPlace ventana = new V_LandingPlace();
                 ventana.setVisible(true);
             }
             
+           
             dispose();
             //JOptionPane.showMessageDialog(this, "Email ingresado: " + email);
         });

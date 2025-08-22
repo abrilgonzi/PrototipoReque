@@ -89,7 +89,7 @@ public class V_ChangePassword extends JFrame {
             
             if (actual.equalsIgnoreCase("ErrorBD"))
             {
-                V_Error ventana = new V_Error();
+                V_ErrorBD ventana = new V_ErrorBD();
                 ventana.setVisible(true);
                 dispose();
             }

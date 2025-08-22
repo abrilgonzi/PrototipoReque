@@ -83,34 +83,31 @@ public class V_Login extends JFrame {
         btnNext.setFocusPainted(false);
         btnNext.addActionListener(e -> {
             String email = txtEmail.getText();
-            
+        javax.swing.JFrame ventana = new JFrame();
             if (email.equalsIgnoreCase("admin"))
             {
-             V_AdminPanel ventana = new V_AdminPanel();
-             ventana.setVisible(true);
-             //VentanaAdministrador admi = new VentanaAdministrador(); 
-
+             ventana = new V_AdminPanel();
             }
             else if (email.equalsIgnoreCase(("BDError")))
             {
-                V_Error error = new V_Error();
-                error.setVisible(true);
-                
+                ventana = new V_ErrorBD();
             }
             else if (email.equalsIgnoreCase("CuentaSuspendida"))
             {
-              V_SAccount nueva = new V_SAccount();
-              nueva.setVisible(true);
+              ventana = new V_SAccount();
             }
-            
+            else if (email.equalsIgnoreCase("Error")) {
+                JOptionPane.showMessageDialog(this,
+                        "Verify your Email and Password!",
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE);
+                ventana= new V_Login();
+            }
             else {
-                V_LandingPlace ventana = new V_LandingPlace();
-                ventana.setVisible(true);
+                ventana = new V_LandingPlace();
             }
-            
-           
+            ventana.setVisible(true);
             dispose();
-            //JOptionPane.showMessageDialog(this, "Email ingresado: " + email);
         });
         add(btnNext);
     }

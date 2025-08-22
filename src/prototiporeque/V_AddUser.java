@@ -77,14 +77,35 @@ public class V_AddUser extends JFrame {
                 JOptionPane.showMessageDialog(this, "Por favor ingrese el correo.", "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
+            else if (correo.equalsIgnoreCase("Error")) {
+                JOptionPane.showMessageDialog(this,
+                        "Verify the Email! It is not an institutional email",
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+            else if (correo.equalsIgnoreCase("Existe")) {
+                JOptionPane.showMessageDialog(this,
+                        "This Email is already registered.",
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE);
+                txtCorreo.setText("");
+                comboStatus.setSelectedIndex(0);
+            }
+            else if (correo.equalsIgnoreCase("ErrorBD")) {
+                V_ErrorBD ventana = new V_ErrorBD();
+                ventana.setVisible(true);
+                dispose();
+                
+            }
+            else {
 
             JOptionPane.showMessageDialog(this,
                     "Usuario agregado:\nCorreo: " + correo + "\nEstado: " + estado,
                     "Éxito", JOptionPane.INFORMATION_MESSAGE);
-
-           
             txtCorreo.setText("");
             comboStatus.setSelectedIndex(0);
+            }
+            
         });
         add(btnGuardar);
         

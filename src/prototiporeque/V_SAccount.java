@@ -15,6 +15,7 @@ public class V_SAccount extends javax.swing.JFrame {
      */
     public V_SAccount() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**

@@ -25,8 +25,28 @@ public class V_AskEmailResetPassword extends javax.swing.JFrame {
         jButton1.setCursor(new Cursor(Cursor.HAND_CURSOR));
         jButton1.addMouseListener(new MouseAdapter() {
              public void mouseClicked(MouseEvent e) {
-                new V_CheckEmailStepsResetPassw().setVisible(true); 
-                dispose(); 
+                String correo = jTextField1.getText();
+                if (correo.equalsIgnoreCase("CuentaSuspendida"))
+                    {
+                      V_SAccount ventana = new V_SAccount();
+                      ventana.setVisible(true);
+                      dispose();
+                    }
+                else if (correo.equalsIgnoreCase("Error")) {
+                    JOptionPane.showMessageDialog(V_AskEmailResetPassword.this,
+                            "Verify the Email!",
+                            "Error",
+                            JOptionPane.ERROR_MESSAGE);
+                }
+                else if (correo.equalsIgnoreCase("ErrorBD")) {
+                V_ErrorBD ventana = new V_ErrorBD();
+                ventana.setVisible(true);
+                dispose();
+                }
+                 else {
+                    new V_CheckEmailStepsResetPassw().setVisible(true); 
+                    dispose(); 
+                 }
             }
         });
         
@@ -37,6 +57,8 @@ public class V_AskEmailResetPassword extends javax.swing.JFrame {
                 dispose(); 
             }
         });
+        
+        
         
     }
 

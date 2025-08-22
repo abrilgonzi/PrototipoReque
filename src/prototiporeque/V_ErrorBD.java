@@ -15,6 +15,7 @@ public class V_ErrorBD extends javax.swing.JFrame {
      */
     public V_ErrorBD() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**

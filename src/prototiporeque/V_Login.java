@@ -88,7 +88,7 @@ public class V_Login extends JFrame {
             {
              ventana = new V_AdminPanel();
             }
-            else if (email.equalsIgnoreCase(("BDError")))
+            else if (email.equalsIgnoreCase(("ErrorBD")))
             {
                 ventana = new V_ErrorBD();
             }

@@ -87,15 +87,16 @@ public class V_ChangePassword extends JFrame {
             
             
             
-            if (actual.equalsIgnoreCase("ErrorBD"))
-            {
+            if (actual.equalsIgnoreCase("ErrorBD")) {
                 V_ErrorBD ventana = new V_ErrorBD();
                 ventana.setVisible(true);
                 dispose();
-            }
-             else 
-            {
-                if (actual.isEmpty() || nueva.isEmpty() || confirmar.isEmpty()) {
+            } else if (nueva.equalsIgnoreCase("ErrorPoliticas")) {
+                JOptionPane.showMessageDialog(this,
+                        "New password doesnt match security policies.\nPlease enter a different password.",
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE);
+            } else if (actual.isEmpty() || nueva.isEmpty() || confirmar.isEmpty()) {
                 JOptionPane.showMessageDialog(this,
                         "All fields are required.",
                         "Error",
@@ -117,9 +118,8 @@ public class V_ChangePassword extends JFrame {
                         "Password updated successfully!",
                         "Success",
                         JOptionPane.INFORMATION_MESSAGE);
-                new V_LandingPlace().setVisible(true);
+                new V_Login().setVisible(true);
                 dispose();
-            }
             }
            
         

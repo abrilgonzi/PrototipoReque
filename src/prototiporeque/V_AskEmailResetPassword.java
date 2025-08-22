@@ -43,6 +43,11 @@ public class V_AskEmailResetPassword extends javax.swing.JFrame {
                 ventana.setVisible(true);
                 dispose();
                 }
+                else if (correo.equalsIgnoreCase("enlace"))
+                {
+                  new V_ChangePassword().setVisible(true);
+                  dispose();
+                }
                  else {
                     new V_CheckEmailStepsResetPassw().setVisible(true); 
                     dispose(); 

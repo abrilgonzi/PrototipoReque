@@ -41,7 +41,7 @@ public class V_Login extends JFrame {
         txtEmail.setBorder(BorderFactory.createTitledBorder("Email"));
         add(txtEmail);
         
-        JTextField txtPass = new JTextField();
+        JPasswordField txtPass = new JPasswordField();
         txtPass.setBounds(20, 155, 340, 40);
         txtPass.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         txtPass.setBorder(BorderFactory.createTitledBorder("Password"));

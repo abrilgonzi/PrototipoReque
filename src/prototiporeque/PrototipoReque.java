@@ -18,7 +18,8 @@ public class PrototipoReque {
         //VentanaCrear ventanita = new VentanaCrear();
         //V_AddUser ventanita = new V_AddUser();
         //V_ManageAccounts ventanita = new V_ManageAccounts();
-        V_Login ventanita = new V_Login();
+        //V_Login ventanita = new V_Login();
+        V_AdminPanel ventanita = new V_AdminPanel();
         ventanita.setVisible(true);
         
         

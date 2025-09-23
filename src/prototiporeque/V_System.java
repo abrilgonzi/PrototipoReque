@@ -78,6 +78,7 @@ public class V_System extends javax.swing.JFrame {
                 dispose();
             } else
             if (jTable2.getValueAt(0, 1)==null) {
+                if (jTable2.getValueAt(0,0)!=null) {
                 Date fecha = new Date();
             
                 String hora, minutos, segundos;
@@ -91,6 +92,13 @@ public class V_System extends javax.swing.JFrame {
                 horaCompleta = horaCompleta.concat(segundos);
 
                 jTable2.setValueAt(horaCompleta, 0, 1);
+                }
+                else {
+                    JOptionPane.showMessageDialog(this,
+                        "First, you must schedule your In.",
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE);
+                }
             }
             else {
                 JOptionPane.showMessageDialog(this,

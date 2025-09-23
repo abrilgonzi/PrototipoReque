@@ -21,7 +21,7 @@ public class V_AddUser extends JFrame {
     public V_AddUser() {
 
         setTitle("Administrador - Agregar Usuario");
-        setSize(400, 300);
+        setSize(400, 400);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         getContentPane().setBackground(Color.WHITE); 
@@ -46,13 +46,15 @@ public class V_AddUser extends JFrame {
         txtCorreo.setBounds(120, 70, 220, 30);
         txtCorreo.setBorder(BorderFactory.createLineBorder(new Color(200, 200, 200))); 
         add(txtCorreo);
-
+        
+        
    
         JLabel lblStatus = new JLabel("Status:");
         lblStatus.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         lblStatus.setBounds(20, 120, 100, 25);
         add(lblStatus);
-
+        
+       
 
         String[] estados = {"Activo", "Pendiente"};
         JComboBox<String> comboStatus = new JComboBox<>(estados);
@@ -60,10 +62,22 @@ public class V_AddUser extends JFrame {
         comboStatus.setBounds(120, 120, 150, 30);
         comboStatus.setBackground(Color.WHITE);
         add(comboStatus);
+        
+        JLabel lblRol = new JLabel("Rol:");
+        lblRol.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        lblRol.setBounds(20, 130, 100, 100);
+        add(lblRol);
+        
+        String [] roles = {"Profesor", "Usuario", "Administrativo"};
+        JComboBox<String> comboStatusRol = new JComboBox<>(roles);
+        comboStatusRol.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        comboStatusRol.setBounds(120, 170, 150, 35);
+        comboStatusRol.setBackground(Color.WHITE);
+        add(comboStatusRol);
 
   
         JButton btnGuardar = new JButton("Done");
-        btnGuardar.setBounds(70, 200, 100, 35);
+        btnGuardar.setBounds(70, 250, 150, 45);
         btnGuardar.setBackground(new Color(0, 120, 215));
         btnGuardar.setForeground(Color.WHITE);
         btnGuardar.setFont(new Font("Segoe UI", Font.BOLD, 14));
@@ -72,6 +86,7 @@ public class V_AddUser extends JFrame {
         btnGuardar.addActionListener(e -> {
             String correo = txtCorreo.getText().trim();
             String estado = (String) comboStatus.getSelectedItem();
+            String rol = (String) comboStatusRol.getSelectedItem();
 
             if (correo.isEmpty()) {
                 JOptionPane.showMessageDialog(this, "Por favor ingrese el correo.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -100,7 +115,7 @@ public class V_AddUser extends JFrame {
             else {
 
             JOptionPane.showMessageDialog(this,
-                    "Usuario agregado:\nCorreo: " + correo + "\nEstado: " + estado,
+                    "Usuario agregado:\nCorreo: " + correo + "\nEstado: " + estado + "\nRol: " + rol,
                     "Éxito", JOptionPane.INFORMATION_MESSAGE);
             txtCorreo.setText("");
             comboStatus.setSelectedIndex(0);
@@ -112,7 +127,7 @@ public class V_AddUser extends JFrame {
         JLabel lblVolver = new JLabel("Return");
         lblVolver.setFont(new Font("Segoe UI", Font.ITALIC, 14));
         lblVolver.setForeground(new Color(0, 120, 215));
-        lblVolver.setBounds(250, 205, 50, 30);
+        lblVolver.setBounds(250, 260, 50, 30);
         lblVolver.setCursor(new Cursor(Cursor.HAND_CURSOR));
         lblVolver.addMouseListener(new MouseAdapter() {
              public void mouseClicked(MouseEvent e) {

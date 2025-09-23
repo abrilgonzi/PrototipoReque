@@ -65,7 +65,7 @@ public class V_AddUser extends JFrame {
         
         JLabel lblRol = new JLabel("Rol:");
         lblRol.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-        lblRol.setBounds(20, 130, 100, 100);
+        lblRol.setBounds(20, 135, 100, 100);
         add(lblRol);
         
         String [] roles = {"Profesor", "Usuario", "Administrativo"};

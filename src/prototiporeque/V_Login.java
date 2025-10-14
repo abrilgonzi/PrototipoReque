@@ -23,9 +23,10 @@ public class V_Login extends JFrame {
         setLayout(null);
 
        
-        JLabel logo = new JLabel("(logo) TEC");
+        JLabel logo = new JLabel("  TEC  ");
         logo.setFont(new Font("Segoe UI", Font.PLAIN, 18));
         logo.setBounds(20, 20, 200, 30);
+        logo.setBackground(Color.red);
         add(logo);
 
         

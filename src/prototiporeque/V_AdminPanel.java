@@ -60,7 +60,7 @@ public class V_AdminPanel  extends JFrame {
         
         // Botón Cerrar Sesión
         JButton btnCerrarSesion = new JButton("Sign out");
-        btnCerrarSesion.setBounds(220, 160, 120, 35);
+        btnCerrarSesion.setBounds(235, 18, 120, 24);
         btnCerrarSesion.setBackground(new Color(220, 53, 69));
         btnCerrarSesion.setForeground(Color.WHITE);
         btnCerrarSesion.setFont(new Font("Segoe UI", Font.BOLD, 14));
@@ -87,7 +87,7 @@ public class V_AdminPanel  extends JFrame {
         add(jButton2);
         
         JButton jButton3 = new JButton("Change password");
-        jButton3.setBounds(235, 18, 120, 24);
+        jButton3.setBounds(220, 160, 120, 35);
         jButton3.setBackground(java.awt.Color.blue);
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setFont(new Font("Segoe UI", Font.BOLD, 14));

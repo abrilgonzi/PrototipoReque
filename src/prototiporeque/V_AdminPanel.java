@@ -81,7 +81,7 @@ public class V_AdminPanel  extends JFrame {
         jButton2.setFocusPainted(false);
         jButton2.setBorder(BorderFactory.createEmptyBorder());
         jButton2.addActionListener(e -> {
-            new V_System().setVisible(true);
+            new V_SCHsystem().setVisible(true);
             dispose(); 
         });
         add(jButton2);

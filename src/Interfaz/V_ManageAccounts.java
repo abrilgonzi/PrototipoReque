@@ -1,4 +1,4 @@
-package prototiporeque;
+package Interfaz;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;

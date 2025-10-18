@@ -1,5 +1,5 @@
 
-package prototiporeque;
+package Interfaz;
 import javax.swing.*;
 import java.awt.*;
 import javax.swing.*;

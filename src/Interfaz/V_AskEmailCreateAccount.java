@@ -2,7 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package prototiporeque;
+package Interfaz;
+import Interfaz.V_Login;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -12,12 +13,12 @@ import java.awt.event.MouseEvent;
  *
  * @author xande
  */
-public class V_AskEmailResetPassword extends javax.swing.JFrame {
+public class V_AskEmailCreateAccount extends javax.swing.JFrame {
 
     /**
      * Creates new form VentanaCrear
      */
-    public V_AskEmailResetPassword() {
+    public V_AskEmailCreateAccount() {
         
         initComponents();
         setLocationRelativeTo(null);
@@ -25,33 +26,8 @@ public class V_AskEmailResetPassword extends javax.swing.JFrame {
         jButton1.setCursor(new Cursor(Cursor.HAND_CURSOR));
         jButton1.addMouseListener(new MouseAdapter() {
              public void mouseClicked(MouseEvent e) {
-                String correo = jTextField1.getText();
-                if (correo.equalsIgnoreCase("CuentaSuspendida"))
-                    {
-                      V_SAccount ventana = new V_SAccount();
-                      ventana.setVisible(true);
-                      dispose();
-                    }
-                else if (correo.equalsIgnoreCase("Error")) {
-                    JOptionPane.showMessageDialog(V_AskEmailResetPassword.this,
-                            "Verify the Email!",
-                            "Error",
-                            JOptionPane.ERROR_MESSAGE);
-                }
-                else if (correo.equalsIgnoreCase("ErrorBD")) {
-                V_ErrorBD ventana = new V_ErrorBD();
-                ventana.setVisible(true);
-                dispose();
-                }
-                else if (correo.equalsIgnoreCase("enlace"))
-                {
-                  new V_ChangePassword().setVisible(true);
-                  dispose();
-                }
-                 else {
-                    new V_CheckEmailStepsResetPassw().setVisible(true); 
-                    dispose(); 
-                 }
+                new V_CheckEmailCreateAccount().setVisible(true); 
+                dispose(); 
             }
         });
         
@@ -62,8 +38,6 @@ public class V_AskEmailResetPassword extends javax.swing.JFrame {
                 dispose(); 
             }
         });
-        
-        
         
     }
 
@@ -88,10 +62,10 @@ public class V_AskEmailResetPassword extends javax.swing.JFrame {
         jLabel1.setText("(Logo) TEC");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel2.setText("Reset your password");
+        jLabel2.setText("Create your TEC account");
 
         jLabel3.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel3.setText("Enter your Email address to reset your password");
+        jLabel3.setText("Enter your new Email address");
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,32 +83,30 @@ public class V_AskEmailResetPassword extends javax.swing.JFrame {
         });
 
         jLabel4.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel4.setText("<html><font color='blue'>Sign In</font></html>");
+        jLabel4.setText("<html>Already have an account? <font color='blue'>Sign In</font></html>");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel3)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTextField1)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(97, 97, 97)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(90, 90, 90)
-                                .addComponent(jLabel1)))
-                        .addGap(13, 13, 13))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(5, 5, 5)
-                        .addComponent(jLabel2)))
-                .addContainerGap(55, Short.MAX_VALUE))
+                        .addGap(167, 167, 167)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(121, 121, 121)
+                        .addComponent(jLabel3))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(107, 107, 107)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(77, 77, 77)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jTextField1)
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(83, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,13 +117,13 @@ public class V_AskEmailResetPassword extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
-                .addGap(26, 26, 26)
+                .addGap(27, 27, 27)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
-                .addGap(18, 18, 18)
+                .addGap(24, 24, 24)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         pack();
@@ -159,9 +131,6 @@ public class V_AskEmailResetPassword extends javax.swing.JFrame {
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
-        if (jTextField1.getText().equals("Email"))
-            jTextField1.setText("");
-            
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

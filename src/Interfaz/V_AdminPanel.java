@@ -16,6 +16,11 @@ import java.awt.*;
 
 public class V_AdminPanel  extends JFrame {
     
+    
+    public JButton btnSchSystem;
+    public JButton btnCerrarSesion;
+    
+    
     public V_AdminPanel() {
         setTitle("Choose");
         setSize(400, 250);
@@ -62,32 +67,24 @@ public class V_AdminPanel  extends JFrame {
         add(btnOpcion2);
         
         // Botón Cerrar Sesión
-        JButton btnCerrarSesion = new JButton("Sign out");
+        btnCerrarSesion = new JButton("Sign out");
         btnCerrarSesion.setBounds(235, 18, 120, 24);
         btnCerrarSesion.setBackground(new Color(220, 53, 69));
         btnCerrarSesion.setForeground(Color.WHITE);
         btnCerrarSesion.setFont(new Font("Segoe UI", Font.BOLD, 14));
         btnCerrarSesion.setFocusPainted(false);
         btnCerrarSesion.setBorder(BorderFactory.createEmptyBorder());
-        btnCerrarSesion.addActionListener(e -> {
-            new V_Login().setVisible(true);
-            dispose(); 
-        });
         add(btnCerrarSesion);
         
         
-        JButton jButton2 = new JButton("SCH System");
-        jButton2.setBounds(50, 160, 120, 35);
-        jButton2.setBackground(java.awt.Color.blue);
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setFont(new Font("Segoe UI", Font.BOLD, 14));
-        jButton2.setFocusPainted(false);
-        jButton2.setBorder(BorderFactory.createEmptyBorder());
-        jButton2.addActionListener(e -> {
-            new V_SCHsystem().setVisible(true);
-            dispose(); 
-        });
-        add(jButton2);
+        btnSchSystem = new JButton("SCH System");
+        btnSchSystem.setBounds(50, 160, 120, 35);
+        btnSchSystem.setBackground(java.awt.Color.blue);
+        btnSchSystem.setForeground(new java.awt.Color(255, 255, 255));
+        btnSchSystem.setFont(new Font("Segoe UI", Font.BOLD, 14));
+        btnSchSystem.setFocusPainted(false);
+        btnSchSystem.setBorder(BorderFactory.createEmptyBorder());
+        add(btnSchSystem);
         
         JButton jButton3 = new JButton("Change password");
         jButton3.setBounds(220, 160, 120, 35);

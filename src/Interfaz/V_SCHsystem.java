@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
  * @author x.espinoza.1
  */
 public class V_SCHsystem extends javax.swing.JFrame {
-    private boolean bd = false;
+    public JLabel lblVolver;
     /**
      * Creates new form V_System
      */
@@ -35,69 +35,12 @@ public class V_SCHsystem extends javax.swing.JFrame {
         lblTitulo.setBounds(30, 15, 200, 30);
         add(lblTitulo);
         
-        JLabel lblVolver = new JLabel("Return");
+        lblVolver = new JLabel("Return");
         lblVolver.setFont(new Font("Segoe UI", Font.ITALIC, 14));
         lblVolver.setForeground(new Color(0, 120, 215));
         lblVolver.setBounds(250, 235, 90, 30);
         lblVolver.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        lblVolver.addMouseListener(new MouseAdapter() {
-             public void mouseClicked(MouseEvent e) {
-                new V_AdminPanel().setVisible(true); 
-                dispose(); 
-            }
-        });
         add(lblVolver);
-        
-        jButton1.addActionListener(e -> {
-            if (bd) {
-                new V_ErrorBD().setVisible(true);
-                dispose();
-            } else {
-                if (jTable2.getValueAt(0, 0)==null) {
-                    Date fecha = new Date();
-
-                    String hora, minutos, segundos;
-                    hora = String.valueOf(fecha.getHours());
-                    minutos = String.valueOf(fecha.getMinutes());
-                    segundos = String.valueOf(fecha.getSeconds());
-
-                    String horaCompleta = hora.concat(":");
-                    horaCompleta = horaCompleta.concat(minutos);
-                    horaCompleta = horaCompleta.concat(":");
-                    horaCompleta = horaCompleta.concat(segundos);
-
-                    jTable2.setValueAt(horaCompleta, 0, 0);
-                    jButton1.setBackground(Color.red);
-                    jButton1.setText("End shift");
-                }
-                else {
-                    if (jTable2.getValueAt(0, 1)==null) {
-                    Date fecha = new Date();
-
-                    String hora, minutos, segundos;
-                    hora = String.valueOf(fecha.getHours());
-                    minutos = String.valueOf(fecha.getMinutes());
-                    segundos = String.valueOf(fecha.getSeconds());
-
-                    String horaCompleta = hora.concat(":");
-                    horaCompleta = horaCompleta.concat(minutos);
-                    horaCompleta = horaCompleta.concat(":");
-                    horaCompleta = horaCompleta.concat(segundos);
-                    jTable2.setValueAt(horaCompleta, 0, 1);
-                    jButton1.setBackground(Color.gray);
-                    jButton1.setText("Shift ended");
-
-                    }
-                    else {
-                        JOptionPane.showMessageDialog(this,
-                                "You already scheduled In and Out.",
-                                "Error",
-                                JOptionPane.ERROR_MESSAGE);
-                        bd = true;
-                    }
-                }
-            }
-        });
         
     }
 
@@ -112,9 +55,9 @@ public class V_SCHsystem extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        SCH = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        BDMarcas = new javax.swing.JTable();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -131,16 +74,16 @@ public class V_SCHsystem extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setBackground(new java.awt.Color(0, 204, 0));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton1.setText("Start shift");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        SCH.setBackground(new java.awt.Color(0, 204, 0));
+        SCH.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        SCH.setText("Start shift");
+        SCH.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                SCHActionPerformed(evt);
             }
         });
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        BDMarcas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null}
             },
@@ -163,7 +106,7 @@ public class V_SCHsystem extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(BDMarcas);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -176,14 +119,14 @@ public class V_SCHsystem extends javax.swing.JFrame {
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(98, 98, 98)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(SCH, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(64, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(75, 75, 75)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(SCH, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(59, 59, 59)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(58, Short.MAX_VALUE))
@@ -192,9 +135,9 @@ public class V_SCHsystem extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void SCHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SCHActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_SCHActionPerformed
 
     /**
      * @param args the command line arguments
@@ -233,10 +176,10 @@ public class V_SCHsystem extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    public javax.swing.JTable BDMarcas;
+    public javax.swing.JButton SCH;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables
 }

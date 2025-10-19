@@ -13,7 +13,10 @@ import java.awt.event.MouseEvent;
 
 
 public class V_Login extends JFrame {
-
+    public JTextField txtEmail;
+    public JPasswordField txtPass;
+    public JButton btnNext;
+    
     public V_Login() {
         
         setTitle("Sistema de autorización");
@@ -36,13 +39,13 @@ public class V_Login extends JFrame {
         add(lblSignIn);
 
   
-        JTextField txtEmail = new JTextField();
+        txtEmail = new JTextField();
         txtEmail.setBounds(20, 110, 340, 40);
         txtEmail.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         txtEmail.setBorder(BorderFactory.createTitledBorder("Email"));
         add(txtEmail);
         
-        JPasswordField txtPass = new JPasswordField();
+        txtPass = new JPasswordField();
         txtPass.setBounds(20, 155, 340, 40);
         txtPass.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         txtPass.setBorder(BorderFactory.createTitledBorder("Password"));
@@ -76,40 +79,12 @@ public class V_Login extends JFrame {
         add(lblAccess);
 
       
-        JButton btnNext = new JButton("Next");
+        btnNext = new JButton("Next");
         btnNext.setBackground(new Color(0, 120, 215));
         btnNext.setForeground(Color.WHITE);
         btnNext.setFont(new Font("Segoe UI", Font.BOLD, 14));
         btnNext.setBounds(260, 250, 100, 35);
         btnNext.setFocusPainted(false);
-        btnNext.addActionListener(e -> {
-            String email = txtEmail.getText();
-        javax.swing.JFrame ventana = new JFrame();
-            if (email.equalsIgnoreCase("admin"))
-            {
-             ventana = new V_AdminPanel();
-            }
-            else if (email.equalsIgnoreCase(("ErrorBD")))
-            {
-                ventana = new V_ErrorBD();
-            }
-            else if (email.equalsIgnoreCase("CuentaSuspendida"))
-            {
-              ventana = new V_SAccount();
-            }
-            else if (email.equalsIgnoreCase("Error")) {
-                JOptionPane.showMessageDialog(this,
-                        "Verify your Email and Password!",
-                        "Error",
-                        JOptionPane.ERROR_MESSAGE);
-                ventana= new V_Login();
-            }
-            else {
-                ventana = new V_LandingPlace();
-            }
-            ventana.setVisible(true);
-            dispose();
-        });
         add(btnNext);
     }
 

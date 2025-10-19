@@ -95,6 +95,7 @@ public class PrototipoReque {
 
         marcasView.lblVolver.addMouseListener(new MouseAdapter() {
              public void mouseClicked(MouseEvent e) {
+                bd=false;
                 marcasView.dispose(); 
                 mostrarAdminPanel();
             }
@@ -102,6 +103,7 @@ public class PrototipoReque {
         
         marcasView.SCH.addActionListener(e -> {
             if (bd) {
+                bd=false;
                 marcasView.dispose();
                 mostrarErrorBD();
             } else {

@@ -14,94 +14,86 @@ import java.awt.*;
  * @author abril
  */
 
-public class V_AdminPanel  extends JFrame {
-    
-    
+
+
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+public class V_AdminPanel extends JFrame {
+
     public JButton btnSchSystem;
     public JButton btnCerrarSesion;
-    
-    
+    public JButton btnOpcion1;
+    public JButton btnOpcion2;
+    public JButton jButton3;
+
     public V_AdminPanel() {
-        setTitle("Choose");
-        setSize(400, 250);
+        // Ventana más grande
+        setTitle("Admin Panel");
+        setSize(700, 400);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        getContentPane().setBackground(Color.WHITE);
+        getContentPane().setBackground(new Color(240, 240, 240)); // gris neutro
         setLayout(null);
 
-     
-        JLabel lblTitulo = new JLabel("Choose the option");
-        lblTitulo.setFont(new Font("Segoe UI", Font.BOLD, 20));
-        lblTitulo.setForeground(new Color(0, 120, 215));
-        lblTitulo.setBounds(30, 15, 200, 30);
+        // ----------------- Título -----------------
+        JLabel lblTitulo = new JLabel("Choose an Option");
+        lblTitulo.setFont(new Font("Segoe UI", Font.BOLD, 28));
+        lblTitulo.setForeground(new Color(60, 60, 60)); // gris oscuro
+        lblTitulo.setBounds(30, 20, 400, 40);
         add(lblTitulo);
 
-
-        JButton btnOpcion1 = new JButton("Add a new user");
-        btnOpcion1.setBounds(50, 70, 120, 40);
-        btnOpcion1.setBackground(new Color(0, 120, 215)); 
-        btnOpcion1.setForeground(Color.WHITE);
-        btnOpcion1.setFont(new Font("Segoe UI", Font.BOLD, 14));
-        btnOpcion1.setFocusPainted(false);
-        btnOpcion1.setBorder(BorderFactory.createEmptyBorder());
-        btnOpcion1.addActionListener(e -> {
-            V_AddUser admi = new V_AddUser();
-            admi.setVisible(true);
-            dispose();
-        });
+        // ----------------- Botones -----------------
+        btnOpcion1 = crearBoton("Add a New User", new Color(200, 200, 200));
+        btnOpcion1.setBounds(100, 100, 220, 70);
         add(btnOpcion1);
 
-
-        JButton btnOpcion2 = new JButton("Manage account");
-        btnOpcion2.setBounds(220, 70, 120, 40);
-        btnOpcion2.setBackground(new Color(0, 120, 215)); 
-        btnOpcion2.setForeground(Color.WHITE);
-        btnOpcion2.setFont(new Font("Segoe UI", Font.BOLD, 14));
-        btnOpcion2.setFocusPainted(false);
-        btnOpcion2.setBorder(BorderFactory.createEmptyBorder());
+        btnOpcion2 = crearBoton("Manage Account", new Color(200, 200, 200));
+        btnOpcion2.setBounds(380, 100, 220, 70);
         btnOpcion2.addActionListener(e -> {
             V_ManageAccounts admi = new V_ManageAccounts();
             admi.setVisible(true);
             dispose();
         });
         add(btnOpcion2);
-        
-        // Botón Cerrar Sesión
-        btnCerrarSesion = new JButton("Sign out");
-        btnCerrarSesion.setBounds(235, 18, 120, 24);
-        btnCerrarSesion.setBackground(new Color(220, 53, 69));
-        btnCerrarSesion.setForeground(Color.WHITE);
-        btnCerrarSesion.setFont(new Font("Segoe UI", Font.BOLD, 14));
-        btnCerrarSesion.setFocusPainted(false);
-        btnCerrarSesion.setBorder(BorderFactory.createEmptyBorder());
-        add(btnCerrarSesion);
-        
-        
-        btnSchSystem = new JButton("SCH System");
-        btnSchSystem.setBounds(50, 160, 120, 35);
-        btnSchSystem.setBackground(java.awt.Color.blue);
-        btnSchSystem.setForeground(new java.awt.Color(255, 255, 255));
-        btnSchSystem.setFont(new Font("Segoe UI", Font.BOLD, 14));
-        btnSchSystem.setFocusPainted(false);
-        btnSchSystem.setBorder(BorderFactory.createEmptyBorder());
+
+        btnSchSystem = crearBoton("SCH System", new Color(200, 200, 200));
+        btnSchSystem.setBounds(100, 220, 220, 70);
         add(btnSchSystem);
-        
-        JButton jButton3 = new JButton("Change password");
-        jButton3.setBounds(220, 160, 120, 35);
-        jButton3.setBackground(java.awt.Color.blue);
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setFont(new Font("Segoe UI", Font.BOLD, 14));
-        jButton3.setFocusPainted(false);
-        jButton3.setBorder(BorderFactory.createEmptyBorder());
-        jButton3.addActionListener(e -> {
-            new V_ChangePassword().setVisible(true);
-            dispose(); 
-        });
+
+        jButton3 = crearBoton("Change Password", new Color(200, 200, 200));
+        jButton3.setBounds(380, 220, 220, 70);
         add(jButton3);
 
-        
-        
+        // ----------------- Botón Cerrar Sesión -----------------
+        btnCerrarSesion = crearBoton("Sign Out", new Color(220, 53, 69));
+        btnCerrarSesion.setBounds(550, 20, 120, 35);
+        add(btnCerrarSesion);
     }
 
+    // ----------------- Método para crear botones estilo neutro -----------------
+    private JButton crearBoton(String texto, Color color) {
+        JButton boton = new JButton(texto);
+        boton.setFont(new Font("Segoe UI", Font.BOLD, 16));
+        boton.setForeground(Color.BLACK);
+        boton.setBackground(color);
+        boton.setFocusPainted(false);
+        boton.setBorderPainted(false);
+
+        // Efecto hover: se oscurece un poco
+        boton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                boton.setBackground(color.darker());
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                boton.setBackground(color);
+            }
+        });
+
+        return boton;
+    }
 
 }

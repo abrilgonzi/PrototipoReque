@@ -23,12 +23,7 @@ public class V_CheckEmailStepsResetPassw extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         jButton1.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        jButton1.addMouseListener(new MouseAdapter() {
-             public void mouseClicked(MouseEvent e) {
-                new V_Login().setVisible(true); 
-                dispose(); 
-            }
-        });
+        
         
     }
 
@@ -118,7 +113,7 @@ public class V_CheckEmailStepsResetPassw extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    public javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

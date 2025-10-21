@@ -81,7 +81,7 @@ public class V_ManageAccounts extends JFrame {
 
         JButton btnEliminar = new JButton("Delete");
         btnEliminar.setBounds(300, 310, 120, 35);
-        btnEliminar.setBackground(new Color(220, 53, 69)); // Rojo Microsoft
+        btnEliminar.setBackground(new Color(220, 53, 69)); 
         btnEliminar.setForeground(Color.WHITE);
         btnEliminar.setFont(new Font("Segoe UI", Font.BOLD, 14));
         btnEliminar.setFocusPainted(false);

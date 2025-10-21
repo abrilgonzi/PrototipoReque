@@ -16,6 +16,8 @@ public class V_Login extends JFrame {
     public JTextField txtEmail;
     public JPasswordField txtPass;
     public JButton btnNext;
+    public JLabel lblAccess; 
+    public JLabel lblCreate;
     
     public V_Login() {
         
@@ -52,32 +54,22 @@ public class V_Login extends JFrame {
         add(txtPass);
 
         
-        // Enlace: No account?
-        JLabel lblCreate = new JLabel("<html>No account? <font color='blue'>Create one!</font></html>");
+        
+        lblCreate = new JLabel("<html>No account? <font color='blue'>Create one!</font></html>");
         lblCreate.setFont(new Font("Segoe UI", Font.PLAIN, 12));
         lblCreate.setBounds(20, 195, 250, 20);
         lblCreate.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        lblCreate.addMouseListener(new MouseAdapter() {
-             public void mouseClicked(MouseEvent e) {
-                new V_AskEmailCreateAccount().setVisible(true); 
-                dispose(); 
-            }
-        });
+        add(lblCreate);
         add(lblCreate);
 
-        // Enlace: Can't access your account?
-        JLabel lblAccess = new JLabel("<html><font color='blue'>Forgot your password?</font></html>");
+        
+        lblAccess =  new JLabel("<html><font color='blue'>Forgot your password?</font></html>");
         lblAccess.setFont(new Font("Segoe UI", Font.PLAIN, 12));
         lblAccess.setBounds(20, 215, 250, 20);
         lblAccess.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        lblAccess.addMouseListener(new MouseAdapter() {
-             public void mouseClicked(MouseEvent e) {
-                new V_AskEmailResetPassword().setVisible(true); 
-                dispose();
-            }
-        });
         add(lblAccess);
 
+        
       
         btnNext = new JButton("Next");
         btnNext.setBackground(new Color(0, 120, 215));

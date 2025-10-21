@@ -18,26 +18,17 @@ public class V_AskEmailCreateAccount extends javax.swing.JFrame {
     /**
      * Creates new form VentanaCrear
      */
+    
     public V_AskEmailCreateAccount() {
         
         initComponents();
         setLocationRelativeTo(null);
         jTextField1.setBorder(BorderFactory.createTitledBorder("Email"));
         jButton1.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        jButton1.addMouseListener(new MouseAdapter() {
-             public void mouseClicked(MouseEvent e) {
-                new V_CheckEmailCreateAccount().setVisible(true); 
-                dispose(); 
-            }
-        });
+        
         
         jLabel4.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        jLabel4.addMouseListener(new MouseAdapter() {
-             public void mouseClicked(MouseEvent e) {
-                new V_Login().setVisible(true); 
-                dispose(); 
-            }
-        });
+        
         
     }
 
@@ -139,11 +130,11 @@ public class V_AskEmailCreateAccount extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    public javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    public javax.swing.JLabel jLabel4;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

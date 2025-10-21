@@ -17,6 +17,13 @@ import java.awt.event.MouseEvent;
 
 
 public class V_AddUser extends JFrame {
+    public JLabel lblVolver;
+    public JLabel lblRol;
+    public JTextField txtCorreo; 
+    public JButton btnGuardar;
+    public JComboBox<String> comboStatus;
+    public JComboBox<String> comboStatusRol;
+    
 
     public V_AddUser() {
 
@@ -41,7 +48,7 @@ public class V_AddUser extends JFrame {
         add(lblCorreo);
 
      
-        JTextField txtCorreo = new JTextField();
+        txtCorreo = new JTextField();
         txtCorreo.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         txtCorreo.setBounds(120, 70, 220, 30);
         txtCorreo.setBorder(BorderFactory.createLineBorder(new Color(200, 200, 200))); 
@@ -57,84 +64,39 @@ public class V_AddUser extends JFrame {
        
 
         String[] estados = {"Activo", "Pendiente"};
-        JComboBox<String> comboStatus = new JComboBox<>(estados);
+        comboStatus = new JComboBox<>(estados);
         comboStatus.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         comboStatus.setBounds(120, 120, 150, 30);
         comboStatus.setBackground(Color.WHITE);
         add(comboStatus);
         
-        JLabel lblRol = new JLabel("Rol:");
+        lblRol = new JLabel("Rol:");
         lblRol.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         lblRol.setBounds(20, 135, 100, 100);
         add(lblRol);
         
         String [] roles = {"Profesor", "Usuario", "Administrativo"};
-        JComboBox<String> comboStatusRol = new JComboBox<>(roles);
+        comboStatusRol = new JComboBox<>(roles);
         comboStatusRol.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         comboStatusRol.setBounds(120, 170, 150, 35);
         comboStatusRol.setBackground(Color.WHITE);
         add(comboStatusRol);
 
   
-        JButton btnGuardar = new JButton("Done");
+        btnGuardar = new JButton("Done");
         btnGuardar.setBounds(70, 250, 150, 45);
         btnGuardar.setBackground(new Color(0, 120, 215));
         btnGuardar.setForeground(Color.WHITE);
         btnGuardar.setFont(new Font("Segoe UI", Font.BOLD, 14));
         btnGuardar.setFocusPainted(false);
         btnGuardar.setBorder(BorderFactory.createEmptyBorder()); 
-        btnGuardar.addActionListener(e -> {
-            String correo = txtCorreo.getText().trim();
-            String estado = (String) comboStatus.getSelectedItem();
-            String rol = (String) comboStatusRol.getSelectedItem();
-
-            if (correo.isEmpty()) {
-                JOptionPane.showMessageDialog(this, "Por favor ingrese el correo.", "Error", JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-            else if (correo.equalsIgnoreCase("Error")) {
-                JOptionPane.showMessageDialog(this,
-                        "Verify the Email! It is not an institutional email",
-                        "Error",
-                        JOptionPane.ERROR_MESSAGE);
-            }
-            else if (correo.equalsIgnoreCase("Existe")) {
-                JOptionPane.showMessageDialog(this,
-                        "This Email is already registered.",
-                        "Error",
-                        JOptionPane.ERROR_MESSAGE);
-                txtCorreo.setText("");
-                comboStatus.setSelectedIndex(0);
-            }
-            else if (correo.equalsIgnoreCase("ErrorBD")) {
-                V_ErrorBD ventana = new V_ErrorBD();
-                ventana.setVisible(true);
-                dispose();
-                
-            }
-            else {
-
-            JOptionPane.showMessageDialog(this,
-                    "Usuario agregado:\nCorreo: " + correo + "\nEstado: " + estado + "\nRol: " + rol,
-                    "Éxito", JOptionPane.INFORMATION_MESSAGE);
-            txtCorreo.setText("");
-            comboStatus.setSelectedIndex(0);
-            }
-            
-        });
         add(btnGuardar);
         
-        JLabel lblVolver = new JLabel("Return");
+        lblVolver = new JLabel("Return");
         lblVolver.setFont(new Font("Segoe UI", Font.ITALIC, 14));
         lblVolver.setForeground(new Color(0, 120, 215));
         lblVolver.setBounds(250, 260, 50, 30);
         lblVolver.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        lblVolver.addMouseListener(new MouseAdapter() {
-             public void mouseClicked(MouseEvent e) {
-                new V_AdminPanel().setVisible(true);
-                dispose();
-            }
-        });
         add(lblVolver);
 
 

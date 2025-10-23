@@ -1,11 +1,13 @@
 package Interfaz;
 
+import Logica.*;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+
 
 public class V_ManageAccounts extends JFrame {
 
@@ -41,11 +43,12 @@ public class V_ManageAccounts extends JFrame {
         lblVolver.setBounds(450, 315, 90, 30);
         lblVolver.setCursor(new Cursor(Cursor.HAND_CURSOR));
         lblVolver.addMouseListener(new MouseAdapter() {
-             public void mouseClicked(MouseEvent e) {
-                new V_AdminPanel().setVisible(true); 
-                dispose(); 
-            }
-        });
+        public void mouseClicked(MouseEvent e) {
+        dispose();
+        // Llama al método del main para volver al Admin Panel
+        PrototipoReque.mostrarAdminPanel();
+    }
+});
         add(lblVolver);
 
         String[] estados = {"All", "Active", "Suspended", "Pending"};

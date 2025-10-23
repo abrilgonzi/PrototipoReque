@@ -28,6 +28,7 @@ public class PrototipoReque {
     private static V_ChangePassword cambiarContraAdmi;
     private static V_CheckEmailStepsResetPassw cambiarContra;
     private static V_AddUser anadirUsuarioV;
+    private static V_ManageAccounts manager;
     
     private static boolean bd = false;
     
@@ -104,7 +105,9 @@ public class PrototipoReque {
         
     }
     
-    private static void mostrarAdminPanel() {
+    
+    
+    public static void mostrarAdminPanel() {
         adminView = new V_AdminPanel();
         adminView.setVisible(true);
 
@@ -127,7 +130,20 @@ public class PrototipoReque {
             adminView.dispose(); 
             anadirUsuario();
         });
+
+        adminView.btnOpcion2.addActionListener(e -> {
+        adminView.dispose();
+        mostrarManageAccounts();
+    });
+        
+      
     }
+    
+    private static void mostrarManageAccounts(){
+        manager = new V_ManageAccounts();
+        manager.setVisible(true);
+};
+
     
     private static void mostrarMarcas() {
         marcasView = new V_SCHsystem();

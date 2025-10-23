@@ -28,7 +28,7 @@ public class V_AdminPanel extends JFrame {
     public JButton jButton3;
 
     public V_AdminPanel() {
-        // Ventana más grande
+      
         setTitle("Admin Panel");
         setSize(700, 400);
         setLocationRelativeTo(null);
@@ -71,7 +71,7 @@ public class V_AdminPanel extends JFrame {
         add(btnCerrarSesion);
     }
 
-    // ----------------- Método para crear botones estilo neutro -----------------
+
     private JButton crearBoton(String texto, Color color) {
         JButton boton = new JButton(texto);
         boton.setFont(new Font("Segoe UI", Font.BOLD, 16));
@@ -80,7 +80,7 @@ public class V_AdminPanel extends JFrame {
         boton.setFocusPainted(false);
         boton.setBorderPainted(false);
 
-        // Efecto hover: se oscurece un poco
+       
         boton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {

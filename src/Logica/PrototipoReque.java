@@ -179,6 +179,10 @@ public class PrototipoReque {
                     marcasView.BDMarcas.setValueAt(horaCompleta, 0, 0);
                     marcasView.SCH.setBackground(Color.red);
                     marcasView.SCH.setText("End shift");
+                    JOptionPane.showMessageDialog(marcasView,
+                                "Check-in time successfully saved.",
+                                "Confirmation",
+                                JOptionPane.INFORMATION_MESSAGE);
                 }
                 else {
                     if (marcasView.BDMarcas.getValueAt(0, 1)==null) {
@@ -196,6 +200,10 @@ public class PrototipoReque {
                     marcasView.BDMarcas.setValueAt(horaCompleta, 0, 1);
                     marcasView.SCH.setBackground(Color.gray);
                     marcasView.SCH.setText("Shift ended");
+                    JOptionPane.showMessageDialog(marcasView,
+                                "Check-out time successfully saved.",
+                                "Confirmation",
+                                JOptionPane.INFORMATION_MESSAGE);
 
                     }
                     else {
